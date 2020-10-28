@@ -1,0 +1,343 @@
+/**
+*  ==========================
+*  === Estilos generales ====
+*  ==========================
+*/
+
+/*
+    PROBLEMA a solucionar: Al final hay un espacio en blanco, el color de fondo del div contendor no cubre
+                            todo el alto y no se con que elemento tiene conflicto. SOLUCIONADO!
+*/
+
+* {
+    /* Resetear estilos por defecto del navegador */
+    margin: 0;
+    padding: 0;
+
+
+
+}
+
+body {
+
+    height: 100%;
+    /* background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
+    margin: 0px !important;
+    background-color: #bedbbb;
+
+}
+
+/* ================ */
+/* === CABECERA === */
+/* ================ */
+
+.cabecera {
+    /* FORZAMOS que la cabecera siempre ocupe lo mismo  */
+    height: 100px;
+
+    /* No se baja al hacer scroll */
+    position: fixed;
+
+    /* Posiciona uno al lado del otro */
+    display: flex;
+
+    /* Alinea y ubica elementos horizontalmente */
+    justify-content: space-between;
+
+    /* Alinea verticalmente al centro */
+    align-items: center;
+
+    /* Que ocupe todo el ancho */
+    width: 100vw;
+
+    /* Efecto degradado */
+    opacity: 0.95;
+    background-color: black;
+    -webkit-box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 1);
+    box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 1);
+
+    /* Añadida para subirla arriba por descuadre al poner div fantasma para carrito */
+    margin-top: -10px;
+    z-index: 1;
+}
+
+
+
+.cabecera h1 {
+    font-family: 'Anton', sans-serif;
+    color: #FBFCFC;
+    text-shadow: 1px 5px 4px rgba(251, 253, 255, 0.39);
+    margin-left: 20px;
+
+}
+
+.cabecera img {
+    width: 50px;
+    height: 50px;
+    margin-right: 200px;
+    border-radius: 5px 5px 5px 5px;
+
+    -webkit-box-shadow: 4px 6px 10px 2px rgba(255, 239, 246, 0.5);
+    box-shadow: 4px 6px 10px 2px rgba(255, 239, 246, 0.5);
+}
+
+/* ============= */
+/* === TEXTO === */
+/* ============= */
+.texto {
+    display: flex;
+    justify-content: center;    
+    font-family: 'Grandstander', cursive;
+    text-shadow: 2px 2px 2px rgba(150, 150, 150, 0.96);
+    color: #FBFCFC;
+    
+}
+   
+
+/* =============== */
+/* === CARRITO === */
+/* =============== */
+
+/* Aquí los estilos para el carrito */
+
+
+.fantasma {
+    float: right;
+    position: fixed;
+    right: 20px;
+    z-index: 1;
+    display: none;  
+    width: 500px;
+    max-height: 500px;
+    background-color: #FBFCFC;
+    color: black;    
+    margin-top: 110px;
+    /* Desplazarlo a la izq */
+    margin-left: -200px;    
+    font-family: 'Grandstander', cursive;
+    padding: 15px 0px;
+    border-radius: 12px;
+    background: rgba(255,255,255,.9);
+}
+
+.fantasma:after {
+    border: 25px solid rgba(255,255,255,.9);
+    content: ' ';
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    top: -50px;
+    left: calc(57%);
+}
+
+#carrito{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    max-height: 500px;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.tienda {
+    width: 100%;
+}
+
+#notItem, #loading{
+    display: none; 
+    padding: 20px;
+}
+
+/* =============================== */
+/* === MAIN | Contenido Juegos === */
+/* =============================== */
+
+.container {  
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    /* overflow: hidden; */
+    margin-top: -50px;  /* -165 */
+    margin-bottom: 150px;     
+
+}
+
+.contenedor {
+    width: 100%;
+    height: 100%;
+    font-family: 'Grandstander', cursive;
+    
+    
+}
+
+
+#tarjetas {
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.tarjeta {
+    /* Tamaño de las tarjetas - lo que ocupan respecto al contenedor */
+    width: 30%;
+
+    /* Separación entre tarjetas */
+    margin-top: 180px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: -100px;
+
+
+    /* Separación entre tarjetas */
+    padding: 25px;
+
+    /* Centrar textos */
+    text-align: center;
+    color: #FBFCFC;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+
+    background: #94b4a4;
+
+    /* Sombra */
+    box-shadow: 6px 4px 8px 0px rgba(0, 0, 0, 0.96);
+}
+
+
+.tarjeta img {
+
+    /* Que las imagenes se adapten al 100% de la pantalla */
+    width: 100%;
+}
+
+.tarjeta img:hover {
+    /*
+    transform: scale(1.2);
+    z-index: 2;
+    box-shadow: 0px 2px 20px #fff;
+    */
+
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
+
+}
+
+
+.tarjeta h2 {
+    margin-top: 20px;
+
+}
+
+.tarjeta p {
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+/* ============= */
+/* === Botón === */
+/* ============= */
+
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #fbafe3;
+	background-color:#ff5bb0;
+	border-radius:6px;
+	border:1px solid #ee1eb5;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #c70067;
+}
+.myButton:hover {
+	background-color:#ef027d;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.myButton2 {
+	box-shadow:inset 0px 1px 0px 0px #fbafe3;
+	background-color:#ff5bb0;
+	border-radius:6px;
+	border:1px solid #ee1eb5;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	padding:3px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #c70067;
+}
+.myButton2:hover {
+	background-color:#ef027d;
+}
+.myButton2:active {
+	position:relative;
+	top:1px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.trTotal td.text-center {
+    border-top: 1px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.centerButton {
+    margin-left: 33%;  
+    
+}
+
+#loading {
+    margin-left: 30%;
+}
+
+/* ============== */
+/* === FOOTER === */
+/* ============== */
+
+.pie{
+    width: auto;
+    height: 100px;
+    background-color: black;
+    font-family: 'Grandstander', cursive;
+    font-size: 24px;
+    text-align: center;
+    /* margin-top: 120px; */
+    box-shadow: 1px -6px 12px 3px rgba(0, 0, 0, 0.68);
+}
+ 
+
+
+
+footer p {
+    display: inline-block;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    color: white;
+}
+

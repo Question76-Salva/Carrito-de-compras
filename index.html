@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grandstander&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- ================ -->
+    <!-- === CABECERA === -->
+    <!-- ================ -->
+    <header class="cabecera">
+      <h1>Retro 8 bits store</h1>
+      <img src="img/cart.jpg" alt="Carrito" id="cartBtn"/>			
+    </header>
+  
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+
+    <!-- =============== -->
+    <!-- === CARRITO === -->
+    <!-- =============== -->  
+    <div class="fantasma" id="ghost">
+      <!-- ============================================================== -->
+      <!-- === Carrito donde se almacenan los productos dinámicamente === -->
+      <!-- ============================================================== -->
+
+      <!-- === Necesito clases para darle formato al div dinámico === -->
+      <div id="carrito">
+        <table id="lista-carrito" class="tienda">
+          <thead>
+            <tr>
+              <!-- === Lista del carrito === -->
+              <th colspan="2">Articulo</th>
+              <th>Precio</th>
+              <th>Total</th>
+              <!-- === Vacio para borrar cursos === -->
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+        <!-- === Botón para vaciar el carrito === -->
+        <buttom class="myButton centerButton" id="vaciar-carrito">Vaciar Carrito</buttom>
+      </div>
+      <div id="loading">
+          <img src="img/loading.gif" />
+      </div>
+      <div id="notItem">
+        <h2 class="text-center">No hay juegos en el carrito</h2>  
+      </div>
+    </div>
+
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+    <!-- ======================================================================= -->
+
+
+    <!-- ============= -->
+    <!-- === TEXTO === -->
+    <!-- ============= -->
+    <div class="texto">
+      <h2>Amstrad CPC catálogo de juegos disponible en formato cassette</h2>
+    </div>
+
+    <!-- ================= -->
+    <!-- === PRODUCTOS === -->
+    <!-- ================= -->
+	
+	<!-- Contenedor principal de todos los juegos -->
+	<div id="lista-cursos" class="container">
+	</div>
+
+    <!-- ============== -->
+    <!-- === FOOTER === -->
+    <!-- ============== -->
+
+    <footer class="pie">
+      <p>
+        Salvador Belloso Santos - Estudiante de Desarrollo Web y Retro
+        Nostalgico
+      </p>
+    </footer>
+    <script src="data.js"></script>
+    <script src="tienda.js"></script>
+  </body>
+</html>
